@@ -1,62 +1,69 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Form.css";
 import logo from "../images/logo.jpg";
+import { useHistory } from "react-router";
 
 const FormSuccess = () => {
+  const [values, setValues] = useState({
+    firstname: "",
+    lastname: "",
+    email: "",
+    password: "",
+    storename: "",
+    phonenumber: "",
+    city: "",
+  });
+  useEffect(() => {
+    const formData = localStorage.getItem("form_data");
+    console.log(formData);
+    if (formData) {
+      setValues(JSON.parse(formData));
+    }
+  }, []);
+
+  const history = useHistory();
+
+  const logOut = () => {
+    localStorage.removeItem("form_data");
+    history.push("/");
+  };
   return (
     <div>
       <div className="navBar">
-        <h3 className="title">Profile</h3>
+        <h3 className="profile-text">Profile</h3>
         <img src={logo} alt="" />
-        <button>Back</button>
+        <button className="btnLogOut" onClick={logOut}>
+          Logout
+        </button>
       </div>
-      <div className="artists-container">
-        <div className="Artist-form">
-          <p className="sub-title">
-            Kindly fill the form below to create an account
-          </p>
-          <form className="form">
-            <div className="colTwo">
-              <input
-                type="text"
-                id="fname"
-                name="firstname"
-                placeholder="First name"
-              />
-              <input
-                type="text"
-                id="lname"
-                name="lastname"
-                placeholder="Last name"
-              />
+      <div className="details-container">
+        <div className="details-form">
+          <h3 className="details-title">Profile Details</h3>
+          <div className="colTwo">
+            <div className="details" id="fname" name="firstname">
+              {values.firstname}
             </div>
-            <input type="email" id="email" name="email" placeholder="Email" />
-            <input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Password"
-            />
-            <br />
+            <div className="details" id="lname" name="lastname">
+              {values.lastname}
+            </div>
+          </div>
+          <div className="details" id="password" name="password">
+            {values.password}
+          </div>
+          <div className="details" id="Store" name="storename">
+            {values.storename}
+          </div>
+          <div className="colTwo">
+            <div className="details" id="lname" name="phonenumber">
+              {values.phonenumber}
+            </div>
+            <div className="details" id="fname" name="city">
+              {values.city}
+            </div>
+          </div>
 
-            <input
-              type="text"
-              id="Store"
-              name="storename"
-              placeholder="Store name"
-            />
-            <div className="colTwo">
-              <input
-                type="number"
-                id="lname"
-                name="phonenumber"
-                placeholder="Phone number"
-              />
-              <input type="text" id="fname" name="city" placeholder="City" />
-            </div>
-            <p className="signIn"> Already have an account? Click here</p>
-            <input type="submit" value="Submit" />
-          </form>
+          <p className="signIn"> SignOut? Click here</p>
+          {/* <button className="btn">Cancel</button> */}
         </div>
       </div>{" "}
       .
