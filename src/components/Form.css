@@ -1,0 +1,99 @@
+.artists-container {
+  width: 100%;
+  display: flex;
+  min-height: 100vh;
+  background-color: #1dcf9f;
+}
+.navBar {
+  width: 100%;
+  background-color: #f5f6f7;
+  display: flex;
+  justify-content: space-between;
+}
+.navBar img {
+  width: 50px;
+  height: 50px;
+}
+.title {
+  font-size: 28px;
+  margin-bottom: 0;
+}
+.sub-title {
+  font-size: 12px;
+  margin-top: 0;
+  padding-bottom: 20px;
+  color: #d1cfcf;
+}
+.Artist-form {
+  flex-direction: row;
+  width: 40%;
+  height: auto;
+  background-color: #fff;
+  padding: 50px;
+}
+
+label {
+  float: left;
+}
+.colTwo {
+  display: flex;
+  justify-content: space-between;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"] {
+  width: 100%;
+  background-color: #f5f6f7;
+  padding: 14px;
+  /* border: 1px solid #ccc; */
+  border: none;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  /* resize: vertical; */
+}
+#lname {
+  width: 45%;
+}
+#fname {
+  width: 50%;
+}
+.signIn {
+  text-align: right;
+  color: #d1cfcf;
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 0;
+  padding-bottom: 20px;
+}
+input[type="submit"] {
+  background-color: #1dcf9f;
+  color: white;
+  padding: 10px 100px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #1db990;
+}
+.Artist-bg {
+  width: 50%;
+  height: auto;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  background: #1ed0a0;
+}
+.Artist-bg img {
+  width: 600px;
+  height: auto;
+}
+.mockupText {
+  color: #f5f6f7e3;
+}
